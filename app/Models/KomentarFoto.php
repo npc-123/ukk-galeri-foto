@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class KomentarFoto extends Model
 {
     use HasFactory;
+    protected $table = 'komentarfoto';
+    protected $primaryKey = 'KomentarID';
 }

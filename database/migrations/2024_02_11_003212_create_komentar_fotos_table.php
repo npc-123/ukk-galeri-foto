@@ -21,11 +21,12 @@ return new class extends Migration
 
             $table->integer('UserID');
             $table->foreign('UserID')
-            ->references('UserID')->on('user')
+            ->references('UserID')->on('users')
             ->onDelete('cascade');
 
             $table->text('IsiKomentar');
             $table->date('TanggalKomentar');
+            $table->timestamps();
         });
     }
 

@@ -22,8 +22,9 @@ return new class extends Migration
                 ->onDelete('cascade');
     
             $table->foreign('UserID')
-                ->references('UserID')->on('user')
+                ->references('UserID')->on('users')
                 ->onDelete('cascade');
+            $table->timestamps();
         });
     }
     

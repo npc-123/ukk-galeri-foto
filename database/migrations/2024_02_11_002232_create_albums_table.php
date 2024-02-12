@@ -18,8 +18,9 @@ return new class extends Migration
             $table->date('TanggalDibuat');
             $table->integer('UserID');
             $table->foreign('UserID')
-            ->references('UserID')->on('user')
+            ->references('UserID')->on('users')
             ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

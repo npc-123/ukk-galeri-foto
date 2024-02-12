@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\AuthController;
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('livewire/home');
+
+
+Route::get('/login', [AuthController::class, 'index_login'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/register', [AuthController::class, 'index_register'])->name('register')->middleware('guest');
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', [Home::class, 'render']); 
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');   
 });

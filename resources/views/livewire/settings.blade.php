@@ -64,4 +64,27 @@
             </form>
         </div>
     </div>
+    @section('script')
+    <script>
+        const btnReset = document.getElementById('reset');
+        btnReset.addEventListener('click', function () {
+            Swal.fire({
+                title: "Apa anda yakin?",
+                text: "Anda akan mereset ke awal.",
+                icon: "warning",
+                showCancelButton: true,
+                cancelButtonColor: "#d33",
+                confirmButtonColor: "#3b82f6",
+                confirmButtonText: "Ya!",
+                cancelButtonText: "Batal",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    @this.call('resetInput');
+                }
+            });
+        })
+
+    </script>
+    @endsection
 </div>

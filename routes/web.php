@@ -2,6 +2,7 @@
 
 use App\Livewire\AuthController;
 use App\Livewire\Home;
+use App\Livewire\Settings;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ Route::get('/register', [AuthController::class, 'index_register'])->name('regist
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', [Home::class, 'render']); 
+    Route::get('/', Home::class); 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');   
+    Route::get('/settings', Settings::class)->name('settings');   
 });

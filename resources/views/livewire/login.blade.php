@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Galeri Foto</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/login-register.css">
   </head>
   <body>
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">

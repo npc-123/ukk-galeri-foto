@@ -19,19 +19,19 @@
                 </div>
                 <div class="block mt-7">
                     <div class="w-full">
+                        <label for="name" class="mt-3 block text-sm font-medium leading-6 text-gray-900">Nama
+                            Lengkap</label>
+                        <div class="mt-2">
+                            <input wire:model="name" id="name" name="name" type="text" autocomplete="off" required
+                                class="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-2 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3 focus:outline-none">
+                        </div>
+                    </div>
+                    <div class="w-full">
                         <label for="username"
                             class="mt-3 block text-sm font-medium leading-6 text-gray-900">Username</label>
                         <div class="mt-2">
                             <input wire:model="username" id="username" name="username" type="text" autocomplete="off"
                                 required
-                                class="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-2 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3 focus:outline-none">
-                        </div>
-                    </div>
-                    <div class="w-full">
-                        <label for="name" class="mt-3 block text-sm font-medium leading-6 text-gray-900">Nama
-                            Lengkap</label>
-                        <div class="mt-2">
-                            <input wire:model="name" id="name" name="name" type="text" autocomplete="off" required
                                 class="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-2 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3 focus:outline-none">
                         </div>
                     </div>

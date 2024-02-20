@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Galeri Foto</title>
     <link rel="stylesheet" href="/css/login-register.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -46,4 +47,26 @@
     </div>
   </body>
   </html>
+  @if (session()->has('successCreateAccount'))
+    <script>
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil membuat Akun',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      })
+    </script>
+  @endif
+  @if (session()->has('errorLogin'))
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Username atau Password Salah',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      })
+    </script>
+  @endif
 </div>

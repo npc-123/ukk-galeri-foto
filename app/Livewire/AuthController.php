@@ -43,8 +43,7 @@ class AuthController extends Component
         $request->session()->regenerate();
         return redirect()->intended('/');
     }
-        // TODO: Buat Pesan Error Lebih bagus
-        dd('gagal');
+    return back()->with('errorLogin', 'Username atau password salah');
     }
     
     public function register(Request $request){
@@ -54,13 +53,17 @@ class AuthController extends Component
         $password = $request->password;
         $address = $request->address;
 
-        $user = new User;
-        $user->username = $username;
-        $user->password = Hash::make($password);
-        $user->email = $email;
-        $user->NamaLengkap = $name;
-        $user->Alamat = $address;
-        $user->save();
-        return redirect('/login')->with('success', 'Berhasil membuat akun!');
+        $user = User::create([
+            'NamaLengkap' => $name,
+            'username' => $username,
+            'email' => $email,
+            'password' => Hash::make($password),
+            'Alamat' => $address
+        ]);
+        if ($user) {
+            return redirect('/login')->with('successCreateAccount', 'Berhasil membuat akun!');
+        } else{
+            return redirect('/register')->with('error', 'Gagal membuat akun!');
+        }
     }    
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->string('email', 255)->unique();
             $table->string('NamaLengkap', 255);
-            $table->string('Foto', 255);
+            $table->string('Foto', 255)->default('image/default/profile.png');
             $table->text('Alamat');
             $table->timestamps();
         });

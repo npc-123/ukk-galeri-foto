@@ -75,7 +75,6 @@
             </form>
         </div>
     </div>
-    @script
     <script>
         const btnReset = document.getElementById('reset');
         const btnSimpan = document.getElementById('simpan');
@@ -107,7 +106,8 @@
                 confirmButtonColor: '#3b82f6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'OK',
-                cancelButtonText: 'Batal'
+                cancelButtonText: 'Batal',
+                reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
                     @this.call('update');
@@ -115,6 +115,7 @@
             });
         });
         </script>
+    @script
         <script>
             Livewire.on('updateSuccess', function(data) {
                 Swal.fire({

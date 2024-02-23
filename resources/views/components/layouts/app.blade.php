@@ -13,15 +13,15 @@
     <body>
         <nav class="bg-white font-serif font-bold w-full mt-3 items-center">
             <div class="flex flex-wrap items-center justify-between">
-                <div class="flex items-center font-sans text-xs sm:text-base w-[40%] sm:w-[30%] md:w-[25%] object-contain">
-                    <div class=" m-1">
+                <div class="flex items-center font-sans text-xs sm:text-base">
+                    <div class=" m-1 sm:m-3 h-[40px] w-[40px] object-contain">
                         <a href="/"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" class="w-[50px]"  alt="logo"></a>
+                            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="logo"></a>
                     </div>
                     <div class="m-1 sm:m-3"><a href="/">Beranda</a></div>
                     <div class="m-1 sm:m-3"><a href="/new">Buat</a></div>
                 </div>
-                <div class="relative w-[20%] sm:w-[58%]">
+                <div class="relative w-[45%] h-12 sm:w-[50%] md:w-[60%]">
                     <form action="/search" method="get">
                     <input type="text" autocomplete="off" name="search"
                         class="pl-10 pr-4 py-2 border-2 rounded-3xl w-full font-normal font-sans focus:outline-none focus:border-blue-500"
@@ -36,12 +36,12 @@
                         </svg>
                     </div>
                 </div>
-                <div class="relative sm:mr-3 w-[30%] sm:w-[10%] ">
+                <div class="relative sm:mr-3">
                     <!-- Tombol dropdown -->
                     <div class="flex items-center dropdown-btn cursor-pointer">
                         <img alt="pp" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
-                            class="inline-flex w-full justify-center bg-white px-3 py-2 h-[60px] object-contain mr-2">
-                        <svg class="-ml-10 sm:-ml-5 md:-ml-9 mr-2 h-9 w-9 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                            class="inline-flex w-full justify-center bg-white px-3 py-2 h-[50px] object-contain mr-2">
+                        <svg class="-ml-5 mr-2 h-9 w-9 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
                             aria-hidden="true">
                             <path fill-rule="evenodd"
                                 d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"

@@ -39,8 +39,8 @@
                 <div class="relative sm:mr-3">
                     <!-- Tombol dropdown -->
                     <div class="flex items-center dropdown-btn cursor-pointer">
-                        <img alt="pp" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
-                            class="inline-flex w-full justify-center bg-white px-3 py-2 h-[50px] object-contain mr-2">
+                        <img alt="pp" src="/storage/{{ auth()->user()->Foto }}"
+                            class="w-[40px] h-[40px] object-cover rounded-full mr-5">
                         <svg class="-ml-5 mr-2 h-9 w-9 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
                             aria-hidden="true">
                             <path fill-rule="evenodd"

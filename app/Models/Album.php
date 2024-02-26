@@ -10,4 +10,5 @@ class Album extends Model
     use HasFactory;
     protected $table = 'album';
     protected $primaryKey = 'AlbumID';
+    protected $guarded = ['AlbumID'];
 }

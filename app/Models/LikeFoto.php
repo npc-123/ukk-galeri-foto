@@ -10,4 +10,5 @@ class LikeFoto extends Model
     use HasFactory;
     protected $table = 'likefoto';
     protected $primaryKey = 'LikeID';
+    protected $guarded = ['LikeID'];
 }

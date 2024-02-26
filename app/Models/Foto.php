@@ -10,4 +10,5 @@ class Foto extends Model
     use HasFactory;
     protected $table = 'foto';
     protected $primaryKey = 'FotoID';
+    protected $guarded = ['FotoID'];
 }

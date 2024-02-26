@@ -10,4 +10,5 @@ class KomentarFoto extends Model
     use HasFactory;
     protected $table = 'komentarfoto';
     protected $primaryKey = 'KomentarID';
+    protected $guarded = ['KomentarID'];
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('DeskripsiFoto');
             $table->date('TanggalUnggah');
             $table->string('LokasiFile', 255);
+            $table->string('slug', 255);
             
             $table->integer('AlbumID');
             $table->foreign('AlbumID')

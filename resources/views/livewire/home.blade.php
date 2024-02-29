@@ -22,11 +22,12 @@
     </style>
     @endsection
     <div class="img-container">
-        @foreach ($posts as $post)
-        <a class="img-result" href="{{ $post->slug }}">
-            <img loading="lazy" src="/storage/{{ $post->LokasiFile }}">
-        </a>
-        @endforeach
+      @foreach ($posts as $post)
+      <a href="{{ $post->slug }}" class="img-result overflow-hidden">
+          <img loading="lazy" src="/storage/{{ $post->LokasiFile }}" alt="{{ $post->judul }}"
+              class="duration-300 hover:scale-105">
+      </a>
+      @endforeach
         <div x-intersect.full="$wire.loadMore()" class="p-4">
             <div wire:loading wire:target="loadMore" 
                   class="loading-indicator">

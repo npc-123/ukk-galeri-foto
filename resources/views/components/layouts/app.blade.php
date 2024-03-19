@@ -8,6 +8,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>    
         @yield('style')
     </head>
     <body>
@@ -15,11 +17,11 @@
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex items-center font-sans text-xs sm:text-base">
                     <div class=" m-1 sm:m-3 h-[40px] w-[40px] object-contain">
-                        <a href="/"><img
+                        <a href="/" wire:navigate><img
                             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="logo"></a>
                     </div>
-                    <div class="m-1 sm:m-3"><a href="/">Beranda</a></div>
-                    <div class="m-1 sm:m-3"><a href="/new">Buat</a></div>
+                    <div class="m-1 sm:m-3"><a href="/" wire:navigate>Beranda</a></div>
+                    <div class="m-1 sm:m-3"><a href="/new" wire:navigate>Buat</a></div>
                 </div>
                 <div class="relative w-[45%] h-12 sm:w-[50%] md:w-[60%]">
                     <form action="/search" method="get">
@@ -51,16 +53,16 @@
         
                     <!-- Isi dropdown -->
                     <div class="dropdown-content font-sans absolute right-0 mt-1 w-40 bg-white rounded-md shadow-lg z-10 hidden">
-                        <a href="/gallery" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Galeri Saya</a>
-                        <a href="/settings" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Pengaturan</a>
-                        <a href="/logout" class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Keluar</a>
+                        <a href="/gallery" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Galeri Saya</a>
+                        <a href="/settings" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Pengaturan</a>
+                        <a href="/logout" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Keluar</a>
                     </div>
                 </div>
             </div>
         </nav>
         {{ $slot }}
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
+        <script data-navigate-once>
+            document.addEventListener('livewire:navigated', function () {
                 const dropdownAkun = document.querySelector('.dropdown-btn');
                 const dropdownContent = document.querySelector('.dropdown-content');
         

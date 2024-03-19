@@ -42,7 +42,7 @@ class NewPost extends Component
             'albumPost' => 'required',
             'imagePost' => 'required|image',
             'judulPost' => 'required',
-            'deskripsiPost' => 'required|max:100'
+            'deskripsiPost' => 'required|max:225'
         ],[
             'albumPost.required' => 'Album tidak boleh kosong',
             'imagePost.required' => 'Gambar tidak boleh kosong',
@@ -72,7 +72,7 @@ class NewPost extends Component
             }
         }
         if (Foto::create($data)) {
-            return redirect()->to('/'.$slug);
+            return redirect()->to('/p/'.$slug);
         } else {
             $this->dispatch('error', type: 'error', title: 'Ada yang salah', message: 'Gagal membuat postingan');
         }

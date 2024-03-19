@@ -19,7 +19,7 @@
                     @error('judulPost') <div class="text-red-500 text-sm">{{ $message }}</div> @enderror
                     
                     <label class="text-sm font-bold text-gray-500 tracking-wide">Deskripsi</label>
-                    <textarea maxlength="100" wire:model="deskripsiPost" @error('deskripsiPost') wire:model.live="deskripsiPost" @enderror
+                    <textarea maxlength="225" wire:model="deskripsiPost" @error('deskripsiPost') wire:model.live="deskripsiPost" @enderror
                         class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 @error('deskripsiPost') border-red-500 focus:border-red-600 @enderror" type="text"></textarea>
                     @error('deskripsiPost') <div class="text-red-500 text-sm">{{ $message }}</div> @enderror
                     
@@ -100,10 +100,8 @@
         </script>
     @endscript
     @section('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
+        document.addEventListener('livewire:navigated', function () {
         $(function () {
             $(".select2").select2({
                     placeholder: 'Pilih Album',
@@ -126,7 +124,7 @@
                                 ];
                             }
                         });
-                        if (text[0] !== '' || text[1] !== '') {
+                        if (text[0] !== '' && text[1] !== '') {
                             // el.append('<option>' + text[0] + '</option>').val(text[0]);
                             Livewire.dispatch('newAlbum', text);
                         } else {
@@ -144,6 +142,7 @@
                     // console.log($(this).val());
                     @this.set('albumPost', $(this).val());
                 });
+            });
         });
     </script>
     @endsection

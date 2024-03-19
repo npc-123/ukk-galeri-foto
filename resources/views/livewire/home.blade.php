@@ -7,8 +7,7 @@
           column-width: 14rem;
           column-gap: 0.5rem;
           padding: 1rem;
-        }
-        
+        } 
         .img-result {
           margin-bottom: 0.5rem;
           display: block;
@@ -22,12 +21,14 @@
     </style>
     @endsection
     <div class="img-container">
-      @foreach ($posts as $post)
-      <a href="{{ $post->slug }}" class="img-result overflow-hidden">
+      @forelse ($posts as $post)
+      <a href="/p/{{ $post->slug }}" wire:navigate class="img-result overflow-hidden">
           <img loading="lazy" src="/storage/{{ $post->LokasiFile }}" alt="{{ $post->judul }}"
               class="duration-300 hover:scale-105">
       </a>
-      @endforeach
+      @empty
+      <p class="font-sans text-center text-gray-600">Tidak ada postingan!</p>
+      @endforelse
         <div x-intersect.full="$wire.loadMore()" class="p-4">
             <div wire:loading wire:target="loadMore" 
                   class="loading-indicator">

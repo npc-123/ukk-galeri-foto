@@ -42,13 +42,14 @@ class NewPost extends Component
             'albumPost' => 'required',
             'imagePost' => 'required|image',
             'judulPost' => 'required',
-            'deskripsiPost' => 'required'
+            'deskripsiPost' => 'required|max:100'
         ],[
             'albumPost.required' => 'Album tidak boleh kosong',
             'imagePost.required' => 'Gambar tidak boleh kosong',
             'imagePost.image' => 'File harus gambar',
             'judulPost.required' => 'Judul harus diisi',
             'deskripsiPost.required' => 'Deskripsi harus diisi',
+            'deskripsiPost.max' => 'Deskripsi maksimal 100 karakter'
         ]);
 
         $user = User::where('UserID', auth()->user()->UserID)->first();

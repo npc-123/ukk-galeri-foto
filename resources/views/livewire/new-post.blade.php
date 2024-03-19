@@ -19,7 +19,7 @@
                     @error('judulPost') <div class="text-red-500 text-sm">{{ $message }}</div> @enderror
                     
                     <label class="text-sm font-bold text-gray-500 tracking-wide">Deskripsi</label>
-                    <textarea maxlength="999" wire:model="deskripsiPost" @error('deskripsiPost') wire:model.live="deskripsiPost" @enderror
+                    <textarea maxlength="100" wire:model="deskripsiPost" @error('deskripsiPost') wire:model.live="deskripsiPost" @enderror
                         class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 @error('deskripsiPost') border-red-500 focus:border-red-600 @enderror" type="text"></textarea>
                     @error('deskripsiPost') <div class="text-red-500 text-sm">{{ $message }}</div> @enderror
                     

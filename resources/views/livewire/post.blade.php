@@ -5,7 +5,7 @@
             <div class="h-full w-1/2">
                 <img class="h-full rounded-xl object-contain" src="/storage/{{ $post->LokasiFile }}" alt="">
             </div>
-            <div class="sm:pl-7 pt-4 flex flex-col justify-between w-1/2">
+            <div class="sm:pl-7 pt-4 flex flex-col justify-between max-sm:w-full max-sm:px-3 w-1/2">
                 <div class="border-solid border-b-2 border-gray-300">
                     <div class="text-3xl font-bold font-sans">
                         {{ $post->JudulFoto }}

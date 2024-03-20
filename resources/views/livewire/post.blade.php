@@ -1,7 +1,7 @@
 <div>
     <div class="flex flex-wrap justify-center">
         <div
-            class="flex max-sm:items-center max-sm:flex-col shadow-2xl rounded-xl max-sm:h-fit h-[85vh] max-sm:w-full w-[80vw] relative">
+            class="flex max-sm:items-center max-sm:flex-col shadow-2xl rounded-xl max-sm:h-full max-sm:shadow-none h-[85vh] max-sm:w-full w-[80vw] relative">
             <div class="h-full w-1/2">
                 <img class="h-full rounded-xl object-contain" src="/storage/{{ $post->LokasiFile }}" alt="">
             </div>

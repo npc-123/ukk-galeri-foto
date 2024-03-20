@@ -11,4 +11,8 @@ class KomentarFoto extends Model
     protected $table = 'komentarfoto';
     protected $primaryKey = 'KomentarID';
     protected $guarded = ['KomentarID'];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'UserID');
+    }
 }

@@ -3,6 +3,7 @@
 use App\Livewire\AuthController;
 use App\Livewire\Home;
 use App\Livewire\NewPost;
+use App\Livewire\Post;
 use App\Livewire\Settings;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');   
     Route::get('/settings', Settings::class)->name('settings');   
     Route::get('/new', NewPost::class)->name('new-post');
+    Route::get('/p/{slug}', Post::class)->name('post');
 });

@@ -6,7 +6,7 @@
                 <img class="h-full rounded-xl object-contain" src="/storage/{{ $post->LokasiFile }}" alt="">
             </div>
             <div class="sm:pl-7 pt-4 flex flex-col justify-between max-sm:w-full max-sm:px-3 w-1/2">
-                <div class="border-solid border-b-2 border-gray-300">
+                <div>
                     <div class="text-3xl font-bold font-sans">
                         {{ $post->JudulFoto }}
                     </div>
@@ -19,7 +19,7 @@
                         <span class="font-bold">{{ $user->username }}</span>
                     </a>
                 </div>
-                <div class="mt-3 overflow-auto max-h-[400px]">
+                <div class="mt-3 overflow-auto max-h-[400px] border-solid border-t-2 border-gray-300">
                     <div class="mt-1 font-bold">Komentar</div>
                     @php
                     setlocale(LC_TIME, 'id_ID.utf8');

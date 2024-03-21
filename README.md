@@ -5,6 +5,8 @@
 - [x] Buat Postingan
 - [x] Fitur Like
 - [x] Fitur Komentar
+    - [x] Edit Komentar
+    - [x] Hapus Komentar
 - [x] Pengaturan Akun
 - [ ] Mencari Pengguna Lain
 - [ ] List Album User

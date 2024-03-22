@@ -8,6 +8,6 @@
     - [x] Edit Komentar
     - [x] Hapus Komentar
 - [x] Pengaturan Akun
-- [ ] Mencari Pengguna Lain
+- [x] Mencari Pengguna Lain
 - [ ] List Album User
 - [ ] Fitur Notifikasi

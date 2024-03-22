@@ -72,7 +72,7 @@ class NewPost extends Component
             }
         }
         if (Foto::create($data)) {
-            return redirect()->to('/p/'.$slug);
+            return $this->redirect('/p/'.$slug, navigate: true);
         } else {
             $this->dispatch('error', type: 'error', title: 'Ada yang salah', message: 'Gagal membuat postingan');
         }

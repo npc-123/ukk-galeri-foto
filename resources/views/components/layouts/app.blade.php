@@ -10,6 +10,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>    
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         @yield('style')
     </head>
     <body>
@@ -21,7 +22,7 @@
                             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="logo"></a>
                     </div>
                     <div class="m-1 sm:m-3"><a href="/" wire:navigate>Beranda</a></div>
-                    <div class="m-1 sm:m-3"><a href="/new" wire:navigate>Buat</a></div>
+                    <div class="m-1 sm:m-3"><a href="/new">Buat</a></div>
                 </div>
                 <div class="relative w-[45%] h-12 sm:w-[50%] md:w-[60%]">
                     <form action="/search" method="get">

@@ -14,7 +14,7 @@
                         {{ $post->DeskripsiFoto }}
                     </div>
                     <a href="/{{ $user->username }}" class="mt-5 flex items-center">
-                        <img class="pr-1 h-[40px] object-contain mr-2 rounded-full" src="/storage/{{ $user->Foto }}"
+                        <img class="pr-1 h-[40px] w-[40px] object-cover mr-2 rounded-full" src="/storage/{{ $user->Foto }}"
                             alt="">
                         <span class="font-bold">{{ $user->username }}</span>
                     </a>
@@ -28,7 +28,7 @@
                     <div>
                         <div class="mt-7">
                             <div class="flex items-center">
-                                <img class="pr-1 h-[30px] object-contain mr-1 rounded-full"
+                                <img class="pr-1 h-[30px] w-[30px] object-cover mr-1 rounded-full"
                                     src="/storage/{{ $comment->user->Foto }}" alt="">
                                 <a href="/{{ $comment->user->username }}" class="font-bold">{{ $comment->user->username }}</a> <span class="mx-2">•</span>
                                 <span class="text-gray-500">{{ strftime('%d %B %Y', strtotime($comment->TanggalKomentar)) }}</span> 
@@ -96,7 +96,7 @@
                     </div>
                     <form wire:submit.prevent="newComment">
                         <div class="my-2 flex">
-                            <img class="h-[40px] rounded-full object-contain mr-2"
+                            <img class="h-[40px] w-[40px] rounded-full object-cover mr-2"
                                 src="/storage/{{ auth()->user()->Foto}}" alt="">
                             <input required wire:model="textComment"
                                 class="p-2 font-medium w-full focus:outline-2 rounded-3xl border-solid border-2 border-gray-300"

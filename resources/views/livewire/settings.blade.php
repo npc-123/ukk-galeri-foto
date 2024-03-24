@@ -14,7 +14,8 @@
                         <label for="upload"
                             class="cursor-pointer inline-block py-2 px-4 bg-blue-500 text-white rounded-lg shadow-lg transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100"
                             tabindex="0">
-                            <span class="d-none d-sm-block">Ganti</span>
+                            <span class="d-none d-sm-block"><i class="bx bx-upload"></i> Ganti</span>
+                            <span wire:loading wire:target="imageUpload"><i class='bx bx-loader-alt bx-spin' style='color:#ffffff' ></i></span>
                             <input wire:model="imageUpload" name="imageUpload" type="file" id="upload" class="hidden">
                         </label>
                         @error('imageUpload') <div class="text-red-500 text-sm">{{ $message }}</div> @enderror

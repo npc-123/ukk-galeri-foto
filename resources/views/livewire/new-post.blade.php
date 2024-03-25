@@ -3,9 +3,9 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @endsection
     <div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="sm:max-w-lg w-full p-10 bg-white rounded-xl shadow-sm">
+        <div class="sm:max-w-lg w-full bg-white rounded-xl shadow-sm">
             <div class="text-center">
-                <h2 class="mt-5 text-3xl font-bold text-gray-900">
+                <h2 class="text-3xl font-bold text-gray-900">
                     Buat Postingan Baru
                 </h2>
                 <p class="mt-2 text-sm text-gray-400">Unggah Kenangan Anda</p>
@@ -59,6 +59,7 @@
                                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                 </svg>
                                 <label for="photo" class="text-blue-600 hover:cursor-pointer">Pilih File</label>
+                                <span wire:loading wire:target="imagePost"><i class='bx bx-loader-alt bx-spin text-blue-600' ></i></span>
                             </div>
                             @endif
                             <input wire:model="imagePost" type="file" class="hidden" name="photo" id="photo" accept="image/webp, image/jpeg, image/png, image/jpg">

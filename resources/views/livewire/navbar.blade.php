@@ -1,18 +1,14 @@
 <div>
     <nav class="bg-white font-serif font-bold w-full mt-3 items-center">
-        <div class="flex flex-wrap items-center justify-between">
-            <div class="flex items-center font-sans text-xs sm:text-base">
-                <div class=" m-1 sm:m-3 h-[40px] w-[40px] object-contain">
-                    <a href="/" wire:navigate><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="logo"></a>
-                </div>
-                <div class="m-1 sm:m-3"><a href="/" wire:navigate>Beranda</a></div>
-                <div class="m-1 sm:m-3"><a href="/new">Buat</a></div>
+        <div class="flex flex-wrap items-center justify-between relative max-w-full">
+            <div class="flex items-center font-sans text-base">
+                <div class="m-1 sm:m-3"><a href="/" wire:navigate><i class='bx bx-home' style='color:#111010' ></i> Beranda</a></div>
+                <div class="m-1 sm:m-3"><a href="/new"><i class='bx bx-plus-circle' undefined ></i> Buat</a></div>
             </div>
-            <div wire:ignore class="relative w-[45%] h-12 sm:w-[50%] md:w-[60%]">
+            <div wire:ignore class="relative w-[40%] h-12">
                 <form wire:submit.prevent="search">
                 <input wire:model.defer="searchInput" type="text" autocomplete="off" name="search" value="{{ request('search') }}"
-                    class="pl-10 pr-4 py-2 border-2 rounded-3xl w-full font-normal font-sans focus:outline-none focus:border-blue-500"
+                    class="bg-gray-100 pl-10 pr-4 py-2 border-2 rounded-3xl w-full font-normal font-sans focus:outline-none focus:border-blue-500"
                     placeholder="Cari Pengguna Lain" />
                 </form>
                 <div class="absolute inset-y-0 left-0 pl-3  
@@ -24,7 +20,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="relative sm:mr-3">
+            <div class="relative">
                 <!-- Tombol dropdown -->
                 <div class="flex items-center dropdown-btn cursor-pointer">
                     <img alt="pp" src="/storage/{{ auth()->user()->Foto }}"
@@ -39,7 +35,7 @@
     
                 <!-- Isi dropdown -->
                 <div class="dropdown-content font-sans absolute right-0 mt-1 w-40 bg-white rounded-md shadow-lg z-10 hidden">
-                    <a href="/gallery" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Galeri Saya</a>
+                    <a href="/{{ auth()->user()->username }}" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Galeri Saya</a>
                     <a href="/settings" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Pengaturan</a>
                     <a href="/logout" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Keluar</a>
                 </div>

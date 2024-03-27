@@ -107,6 +107,10 @@
             $(".select2").select2({
                     placeholder: 'Pilih Album',
                     width: '100%',
+                    "language": {
+                        "noResults": function(){
+                            return "Album Tidak Ditemukan";
+                    }}
                 })
                 .on('select2:close', async function () {
                     var el = $(this);

@@ -29,7 +29,10 @@ class NewPost extends Component
     }
     public function newAlbum($namaAlbum, $deskripsiAlbum)
     {
+        $modelAlbum = new Album();
+        $slug = $this->generateUniqueRandomLetters(6, $modelAlbum, 'slug');
         $album = Album::create([
+            'slug' => $slug,
             'NamaAlbum' => $namaAlbum,
             'Deskripsi' => $deskripsiAlbum,
             'TanggalDibuat' => date('Y-m-d'),
@@ -54,7 +57,9 @@ class NewPost extends Component
 
         $user = User::where('UserID', auth()->user()->UserID)->first();
         $modelFoto = new Foto();
+        $modelAlbum = new Album();
         $slug = $this->generateUniqueRandomLetters(6, $modelFoto, 'slug');
+        $slug = $this->generateUniqueRandomLetters(6, $modelAlbum, 'slug');
         $data = [
             'JudulFoto' => $this->judulPost,
             'DeskripsiFoto' => $this->deskripsiPost,
@@ -72,7 +77,7 @@ class NewPost extends Component
             }
         }
         if (Foto::create($data)) {
-            return $this->redirect('/p/'.$slug, navigate: true);
+            return $this->redirect('/p/'.$slug);
         } else {
             $this->dispatch('error', type: 'error', title: 'Ada yang salah', message: 'Gagal membuat postingan');
         }

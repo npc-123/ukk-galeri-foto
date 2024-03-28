@@ -42,7 +42,6 @@
             </div>
         </div>
     </nav>
-    @section('script')
     <script data-navigate-once>
         document.addEventListener('livewire:navigated', function () {
             const dropdownAkun = document.querySelector('.dropdown-btn');
@@ -60,5 +59,4 @@
             });
         });
     </script>    
-    @endsection
 </div>

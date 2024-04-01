@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Album;
 use App\Livewire\AuthController;
+use App\Livewire\Profile;
 use App\Livewire\Home;
 use App\Livewire\NewPost;
 use App\Livewire\Post;
@@ -34,4 +36,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/new', NewPost::class)->name('new-post');
     Route::get('/search', Search::class)->name('search');
     Route::get('/p/{slug}', Post::class)->name('post');
+    Route::get('/{user}', Profile::class)->name('gallery');
+    Route::get('/{user}/{page}', Profile::class);
 });

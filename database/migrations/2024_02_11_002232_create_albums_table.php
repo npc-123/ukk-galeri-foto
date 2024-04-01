@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('album', function (Blueprint $table) {
             $table->integer('AlbumID', 11)->autoIncrement();
+            $table->string('slug', 255);
             $table->string('NamaAlbum', 255);
             $table->text('Deskripsi');
             $table->date('TanggalDibuat');

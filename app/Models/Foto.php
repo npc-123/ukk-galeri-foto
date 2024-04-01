@@ -11,4 +11,8 @@ class Foto extends Model
     protected $table = 'foto';
     protected $primaryKey = 'FotoID';
     protected $guarded = ['FotoID'];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'UserID');
+    }
 }

@@ -13,6 +13,10 @@
                     <div class="mt-2 font-sans text-gray-500">
                         {{ $post->DeskripsiFoto }}
                     </div>
+                    @php
+                        setlocale(LC_TIME, 'id_ID');
+                    @endphp
+                    <div class="mt-5 text-gray-900">Dibuat: {{ strftime('%d %B %Y', strtotime($post->TanggalUnggah)) }}</div>
                     <a href="/{{ $user->username }}" class="mt-5 flex items-center">
                         <img class="pr-1 h-[40px] w-[40px] object-cover mr-2 rounded-full" src="/storage/{{ $user->Foto }}"
                             alt="">

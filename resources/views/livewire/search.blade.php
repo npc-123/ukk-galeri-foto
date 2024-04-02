@@ -7,8 +7,8 @@
                     <img class="w-[50px] h-[50px] object-cover rounded-full" src="/storage/{{$user->Foto}}" alt="">
                 </div>
                 <div class="flex flex-col ml-3 w-[50%]">
-                    <span class="font-bold">{{$user->username}}</span>
-                    <span>{{$user->NamaLengkap}}</span>
+                    <span class="font-bold">{{$user->NamaLengkap}}</span>
+                    <span>{{$user->username}}</span>
                 </div>
                 <div class="flex items-center ml-auto">
                     <div class="rounded-full bg-blue-500 px-3 py-1 text-white hover:bg-blue-600">

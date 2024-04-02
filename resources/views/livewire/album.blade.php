@@ -83,7 +83,7 @@
                         const { value: text } = await Swal.fire({
                                 title: "Edit Nama Album",
                                 html: `
-                                  <input id="swal-input1" class="swal2-input" value="{{ $album->NamaAlbum }}" placeholder="Masukkan Nama Album">
+                                  <input id="swal-input1" autocomplete="off" class="swal2-input" value="{{ $album->NamaAlbum }}" placeholder="Masukkan Nama Album">
                                 `,
                                 focusConfirm: false,
                                 preConfirm: () => {

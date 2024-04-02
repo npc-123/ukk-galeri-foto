@@ -32,7 +32,7 @@ class Album extends Component
     }
     public function deleteAlbum(){
         ModelsAlbum::where('AlbumID', $this->albumId)->delete();
-        return redirect('/'.$this->username.'/album');
+        return $this->redirect('/'.$this->username.'/album', navigate: true);
     }
     public function loadMore(){
         $this->on_page += 20;

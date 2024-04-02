@@ -17,7 +17,7 @@
                         setlocale(LC_TIME, 'id_ID');
                     @endphp
                     <div class="mt-5 text-gray-900">Dibuat: {{ strftime('%d %B %Y', strtotime($post->TanggalUnggah)) }}</div>
-                    <div>Album: <a class="text-blue-700 font-semibold" href="/{{ $user->username }}/album/{{ $post->album->slug }}">{{ $post->album->NamaAlbum }}</a></div>
+                    <div>Album: <a class="text-blue-700 font-semibold" wire:navigate href="/{{ $user->username }}/album/{{ $post->album->slug }}">{{ $post->album->NamaAlbum }}</a></div>
                     <a href="/{{ $user->username }}" class="mt-3 flex items-center">
                         <img class="pr-1 h-[40px] w-[40px] object-cover mr-2 rounded-full" src="/storage/{{ $user->Foto }}"
                             alt="">

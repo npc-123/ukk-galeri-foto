@@ -38,4 +38,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/p/{slug}', Post::class)->name('post');
     Route::get('/{user}', Profile::class)->name('gallery');
     Route::get('/{user}/{page}', Profile::class);
+    Route::get('/{user}/album/{album}', Album::class);
 });

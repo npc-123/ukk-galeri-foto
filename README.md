@@ -10,5 +10,5 @@
 - [x] Pengaturan Akun
 - [x] Mencari Pengguna Lain
 - [x] Profile User
-- [ ] List Album User
+- [x] List Album User
 - [ ] Fitur Notifikasi

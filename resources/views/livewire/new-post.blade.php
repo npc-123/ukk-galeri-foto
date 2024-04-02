@@ -102,7 +102,6 @@
     @endscript
     @section('script')
     <script>
-        document.addEventListener('livewire:navigated', function () {
         $(function () {
             $(".select2").select2({
                     placeholder: 'Pilih Album',
@@ -148,7 +147,6 @@
                     @this.set('albumPost', $(this).val());
                 });
             });
-        });
     </script>
     @endsection
 </div>

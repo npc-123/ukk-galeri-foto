@@ -21,7 +21,7 @@
         }
     </style>
     @endsection
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center mt-5">
         <div>
             <img class="w-[130px] h-[130px] object-cover rounded-full" src="/storage/{{ $user->Foto }}" alt="">
         </div>

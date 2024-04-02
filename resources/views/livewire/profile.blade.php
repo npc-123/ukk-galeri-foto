@@ -77,7 +77,7 @@
             @endif
         </div>
         @elseif ($page == 'album')
-        <div class="flex flex-wrap justify-between w-full max-w-[1200px] m-auto mt-1">
+        <div class="relative flex flex-wrap justify-between w-full max-w-[1200px] m-auto mt-1">
             @forelse ($posts as $post)
             <div class="flex-1 m-3 min-w-[200px] height-[100px] box bg-white" style="box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
                 <a href="album/{{ $post->slug }}">

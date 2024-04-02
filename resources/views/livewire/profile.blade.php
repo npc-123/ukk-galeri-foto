@@ -19,13 +19,6 @@
             object-fit: cover;
             border-radius: 0.2rem;
         }
-
-        .text-shadow {
-            text-shadow: 0px 0px 10px black,
-                0px 0px 20px black,
-                0px 0px 40px black,
-                0px 0px 80px black;
-        }
     </style>
     @endsection
     <div class="flex flex-col items-center">
@@ -85,9 +78,9 @@
                         <span class="text-2xl font-bold">{{ $post->NamaAlbum }}</span>
                         <div class="mt-2 text-sm text-gray-700">{{ $post->Deskripsi }}</div>
                         <div class="flex mt-3">
-                            <span>{{ $allFoto[$post->AlbumID]->total }} Foto</span>
+                            <span>{{ $allFoto[$post->AlbumID]->total ?? '0' }} Foto</span>
                             <span class="mx-2">•</span>
-                            <span>Diperbarui {{ $lastUpdated[$post->AlbumID] }}</span>
+                            <span>Diperbarui {{ $lastUpdated[$post->AlbumID] ?? $post->created_at->diffForHumans() }}</span>
                         </div>
                     </div>
                 </a>

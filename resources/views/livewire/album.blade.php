@@ -122,10 +122,10 @@
             @endif
         </div>
         <div>
-            <img class="w-[70px] h-[70px] object-cover rounded-full" src="/storage/{{ $user->Foto }}" alt="">
-        </div>
-        <div class="mt-1">
-            <span class="text-xl font-semibold">{{ $user->NamaLengkap }}</span>
+            <a href="/{{ $user->username }}">
+                <img class="mx-auto w-[70px] h-[70px] object-cover rounded-full" src="/storage/{{ $user->Foto }}" alt="">
+                <span class="mt-1 text-xl font-semibold">{{ $user->NamaLengkap }}</span>
+            </a>
         </div>
     </div>
     <div class="img-container relative">

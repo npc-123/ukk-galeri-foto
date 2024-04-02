@@ -24,7 +24,7 @@ class Profile extends Component
         } elseif ($this->page == 'album') {
             $albumId = Album::where('UserID', $user->UserID)->pluck('AlbumID');
             $posts = Album::whereIn('AlbumID', $albumId)->latest()->take($this->on_page)->get();
-            $allFoto = Foto::whereIn('AlbumID', $albumId)->selectRaw('AlbumID, COUNT(*) as total')->groupBy('AlbumID')->get()->keyBy('AlbumID');
+            $allFoto = Foto::whereIn('AlbumID', $albumId)->selectRaw('AlbumID, COUNT(FotoID) as total')->groupBy('AlbumID')->get()->keyBy('AlbumID');
 
             $lastUpdated = Foto::whereIn('FotoID', function ($query) use ($albumId) {
                 $query->selectRaw('max(FotoID)')

@@ -5,6 +5,7 @@ use App\Livewire\AuthController;
 use App\Livewire\Profile;
 use App\Livewire\Home;
 use App\Livewire\NewPost;
+use App\Livewire\Notification;
 use App\Livewire\Post;
 use App\Livewire\Search;
 use App\Livewire\Settings;
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/settings', Settings::class)->name('settings');   
     Route::get('/new', NewPost::class)->name('new-post');
     Route::get('/search', Search::class)->name('search');
+    Route::get('/notification', Notification::class)->name('notification');
     Route::get('/p/{slug}', Post::class)->name('post');
     Route::get('/{user}', Profile::class)->name('gallery');
     Route::get('/{user}/{page}', Profile::class);

@@ -11,4 +11,4 @@
 - [x] Mencari Pengguna Lain
 - [x] Profile User
 - [x] List Album User
-- [ ] Fitur Notifikasi
+- [x] Fitur Notifikasi

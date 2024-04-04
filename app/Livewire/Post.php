@@ -6,6 +6,7 @@ use App\Models\Foto;
 use App\Models\User;
 use App\Models\KomentarFoto;
 use App\Models\LikeFoto;
+use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use Livewire\Component;
 
@@ -34,8 +35,6 @@ class Post extends Component
         $this->post = Foto::where('slug', $slug)->first();
         $this->user = User::find($this->post->UserID);
 
-        
-
         $this->likeTotal = LikeFoto::where('FotoID', $this->post->FotoID)->count();
         $likeStatus = LikeFoto::where('UserID', auth()->user()->UserID)->where('FotoID', $this->post->FotoID)->first();
         $this->dispatch('like', liked: $likeStatus ? false : true);
@@ -44,6 +43,7 @@ class Post extends Component
         $like = LikeFoto::where('UserID', auth()->user()->UserID)->where('FotoID', $this->post->FotoID)->first();
         if ($like){
             $like->delete();
+            $this->deleteNotification('like', $this->post->FotoID);
             $this->likeTotal = LikeFoto::where('FotoID', $this->post->FotoID)->count();
             $this->dispatch('like', liked: true);
         } else {
@@ -53,6 +53,9 @@ class Post extends Component
                 'TanggalLike' => date('Y-m-d')
             ]);
             $this->likeTotal = LikeFoto::where('FotoID', $this->post->FotoID)->count();
+            if (auth()->user()->UserID != $this->user->UserID){
+                $this->sendNotification($this->user->UserID, 'like', 'menyukai postigan anda', $this->post->FotoID);
+            }
             $this->dispatch('like', liked: false);
         }
     }
@@ -63,9 +66,12 @@ class Post extends Component
             'IsiKomentar' => $this->textComment,
             'TanggalKomentar' => date('Y-m-d')
         ]);
-        $this->reset('textComment');
+        // $this->reset('textComment');
         // $this->dispatch('newComment', id: $komentar->KomentarID);
         // $this->dispatch('refreshComponent');
+        if (auth()->user()->UserID != $this->user->UserID){
+            $this->sendNotification($this->user->UserID, 'komentar', 'mengomentari postigan anda', $this->post->FotoID, $komentar->KomentarID);
+        }
         return $this->redirect('/p/'.$this->slug, navigate: true);
     }
     public function editComment($KomentarID, $IsiKomentar){
@@ -82,7 +88,21 @@ class Post extends Component
         if (KomentarFoto::where('KomentarID', $KomentarID)->where('UserID', auth()->user()->UserID)->first()){
             $comment = KomentarFoto::find($KomentarID);
             $comment->delete();
+            $this->deleteNotification('komentar', $this->post->FotoID, $KomentarID);
             $this->dispatch('refreshComponent');
         }
+    }
+    public function sendNotification($userId, $tipe, $isi, $FotoId, $KomentarId = null){
+        Notifikasi::create([
+            'UserID' => $userId,
+            'dariUserID' => auth()->user()->UserID,
+            'tipe' => $tipe,
+            'isi' => $isi,
+            'KomentarID' => $KomentarId,
+            'FotoID' => $FotoId
+        ]);
+    }
+    public function deleteNotification($tipe, $FotoId, $KomentarId = null){
+        Notifikasi::where('tipe', $tipe)->where('FotoID', $FotoId)->where('KomentarID', $KomentarId)->delete();
     }
 }

@@ -20,6 +20,11 @@
                     </svg>
                 </div>
             </div>
+            <div class="flex items-center">
+            <div class="relative">
+                <a class="mr-2" wire:navigate href="/notification"><i class='bx bx-bell text-3xl' style='color:#111010'  ></i></a>
+                {{-- <span class="absolute top-1 right-3 inline-block w-3 h-3 bg-red-600 border-2 rounded-full"></span> --}}
+            </div>
             <div class="relative">
                 <!-- Tombol dropdown -->
                 <div class="flex items-center dropdown-btn cursor-pointer">
@@ -40,6 +45,7 @@
                     <a href="/logout" wire:navigate class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:rounded-lg">Keluar</a>
                 </div>
             </div>
+        </div>
         </div>
     </nav>
     <script data-navigate-once>

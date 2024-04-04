@@ -22,5 +22,13 @@ class DatabaseSeeder extends Seeder
             'Alamat' => 'kepuh',
             'Foto' => 'default.png'
         ]);
+        \App\Models\User::factory()->create([
+            'username' => 'a',
+            'email' => 'tests@example.com',
+            'password' => bcrypt('m'),
+            'NamaLengkap' => 'Nasrul Aziz',
+            'Alamat' => 'kepuh',
+            'Foto' => 'default.png'
+        ]);
     }
 }

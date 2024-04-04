@@ -9,6 +9,7 @@ use Livewire\Component;
 class Search extends Component
 {
     public $search;
+    public $on_page = 20;
     public function render()
     {
         return view('livewire.search', [
@@ -16,10 +17,13 @@ class Search extends Component
                 ->where(function($query) {
                     $query->where('username', 'like', '%'.$this->search.'%')
                           ->orWhere('NamaLengkap', 'like', '%'.$this->search.'%');
-                })->get()
+                })->latest()->paginate($this->on_page),
         ]);
     }
     public function mount(Request $request){
         $this->search = $request->search;
+    }
+    public function loadMore(){
+        $this->on_page += 20;
     }
 }

@@ -20,5 +20,10 @@
         @empty
         <span class="font-bold">Tidak ada hasil</span>
         @endforelse
+        <div x-intersect.full="$wire.loadMore()" class="p-4">
+            <div wire:loading wire:target="loadMore" class="loading-indicator">
+                <i class='bx bx-loader-alt bx-spin' style='color:#000000' ></i> Memuat Lebih banyak akun...
+            </div>
+        </div>
     </div>
 </div>

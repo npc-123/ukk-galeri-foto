@@ -2,6 +2,7 @@
 
 use App\Livewire\Album;
 use App\Livewire\AuthController;
+use App\Livewire\EditPost;
 use App\Livewire\Profile;
 use App\Livewire\Home;
 use App\Livewire\NewPost;
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/search', Search::class)->name('search');
     Route::get('/notification', Notification::class)->name('notification');
     Route::get('/p/{slug}', Post::class)->name('post');
+    Route::get('/p/{slug}/edit', EditPost::class)->name('post-edit');
     Route::get('/{user}', Profile::class)->name('gallery');
     Route::get('/{user}/{page}', Profile::class);
     Route::get('/{user}/album/{album}', Album::class);

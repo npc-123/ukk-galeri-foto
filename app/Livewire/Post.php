@@ -74,6 +74,15 @@ class Post extends Component
         }
         return $this->redirect('/p/'.$this->slug, navigate: true);
     }
+    public function editPost(){
+        return $this->redirect('/p/'.$this->slug.'/edit');
+    }
+    public function deletePost(){
+        $this->deleteNotification('post', $this->post->FotoID);
+        $this->post->delete();
+        return redirect('/')->with('deletePost', 'Postingan berhasil di hapus');
+
+    }
     public function editComment($KomentarID, $IsiKomentar){
         if (KomentarFoto::where('KomentarID', $KomentarID)->where('UserID', auth()->user()->UserID)->first()){
             $comment = KomentarFoto::find($KomentarID);

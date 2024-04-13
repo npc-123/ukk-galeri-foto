@@ -22,7 +22,7 @@
     </style>
     @endsection
     <div class="flex flex-col items-center mt-5">
-        <div class="flex mb-4">
+        <div class="flex">
             <span class="text-3xl font-bold">{{$album->NamaAlbum}}</span>
             @if($user->UserID == auth()->user()->UserID)
             <div class="relative">
@@ -55,7 +55,7 @@
                               icon: "success",
                               title: "Berhasil Memperbarui Nama Album"
                             });
-                            @this.dispatch('refreshLivewire');
+                            @this.dispatch('refreshComponent');
                         })
                 </script>
                 @endscript
@@ -84,17 +84,18 @@
                                 title: "Edit Nama Album",
                                 html: `
                                   <input id="swal-input1" autocomplete="off" class="swal2-input" value="{{ $album->NamaAlbum }}" placeholder="Masukkan Nama Album">
+                                  <input id="swal-input2" autocomplete="off" class="swal2-input" value="{{ $album->Deskripsi }}" placeholder="Masukkan Deskripsi Album">
                                 `,
                                 focusConfirm: false,
                                 preConfirm: () => {
                                     return [
                                         document.getElementById("swal-input1").value,
+                                        document.getElementById("swal-input2").value,
                                     ];
                                 }
                             });
-                            const newName = text[0];
-                            if (text !== '') {
-                                @this.call('editAlbum', newName);
+                            if (text[0] !== '' && text[1] !== '') {
+                                @this.call('editAlbum', text[0], text[1]);
                             } else {
                                 Swal.fire({
                                     icon: 'error',
@@ -120,6 +121,9 @@
                 </script>
             </div>
             @endif
+        </div>
+        <div class="mt-1 mb-4">
+            <span class="text-lg text-gray-600">{{ $album->Deskripsi }}</span>
         </div>
         <div>
             <a href="/{{ $user->username }}">

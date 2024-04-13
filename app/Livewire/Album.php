@@ -24,9 +24,10 @@ class Album extends Component
         $this->username = $user;
         $this->albumId = ModelsAlbum::where('slug', $album)->first()->AlbumID;
     }
-    public function editAlbum($newName){
+    public function editAlbum($namaAlbum, $deskripsiAlbum){
         ModelsAlbum::where('AlbumID', $this->albumId)->update([
-            'NamaAlbum' => $newName
+            'NamaAlbum' => $namaAlbum,
+            'Deskripsi' => $deskripsiAlbum
         ]);
         $this->dispatch('successUpdate');
     }
